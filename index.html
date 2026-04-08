@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WiFi Script</title>
+    <style>
+        body {
+            margin: 0;
+            background: #2e3440;
+            color: #d8dee9;
+            font-family: "Segoe UI", monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #3b4252;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #88c0d0;
+        }
+
+        p {
+            color: #81a1c1;
+        }
+
+        code {
+            display: block;
+            background: #2e3440;
+            padding: 15px;
+            border-radius: 8px;
+            color: #a3be8c;
+            word-wrap: break-word;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #88c0d0;
+            color: #2e3440;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #81a1c1;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #4c566a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>WiFi Script</h1>
+    <p>Run this command in PowerShell:</p>
+
+    <code id="cmd">
+irm https://raw.githubusercontent.com/JoeSaf/masswifi/main/wifi.ps1 | iex
+    </code>
+
+    <button onclick="copyCmd()">Copy Command</button>
+
+    <footer>
+        Always review scripts before running.
+    </footer>
+</div>
+
+<script>
+function copyCmd() {
+    const text = document.getElementById("cmd").innerText;
+    navigator.clipboard.writeText(text);
+    alert("Command copied!");
+}
+</script>
+
+</body>
+</html>
